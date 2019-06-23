@@ -188,7 +188,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
 
       footer {
         background-color: #2d2d2d;
-        padding: 40px;
+        padding: 50px 50px 70px;
         position: relative;
       }
 
@@ -378,7 +378,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         }
 
         footer {
-          padding: 40px 26%;
+          padding: 65px 26% 80px;
         }
       }
 
@@ -388,7 +388,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         }
 
         footer {
-          padding: 40px 18%;
+          padding: 65px 18% 80px;
         }
       }
     </style>

@@ -20,8 +20,9 @@ import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-image/iron-image.js';
 import '@polymer/iron-pages/iron-pages.js';
-import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
+// Use relative paths for peer dependencies
+import './elements/menu.js';
 import './tormii-icons.js';
 
 // Gesture events like tap and track generated from touch will not be
@@ -50,10 +51,6 @@ class TormiiApp extends PolymerElement {
           text-decoration: none;
         }
 
-        a.iron-selected {
-          font-weight: bold;
-        }
-
         app-drawer-layout:not([narrow]) [drawer-toggle] {
           display: none;
         }
@@ -66,10 +63,6 @@ class TormiiApp extends PolymerElement {
           --paper-icon-button-ink-color: white;
         }
 
-        .drawer-list {
-          margin: 0 20px;
-        }
-
         .header__link {
           font-size: var(--app-toolbar-font-size);
           height: 24px;
@@ -80,38 +73,9 @@ class TormiiApp extends PolymerElement {
           font-weight: 600;
         }
 
-        iron-selector a {
-          display: table-cell;
-          font-size: var(--app-toolbar-font-size);
-          padding: 0 15px;
-          vertical-align: middle;
-        }
-
-        @media (max-width: 640px) {
-          .drawer-list a {
-            display: block;
-            padding: 0 16px;
-            text-decoration: none;
-            color: var(--app-secondary-color);
-            line-height: 40px;
-          }
-
-          .drawer-list a.iron-selected {
-            color: black;
-            font-weight: bold;
-          }
-        }
-
         @media (min-width: 641px) {
           app-header {
             padding: 0 5%;
-          }
-
-          .drawer-list {
-            display: table;
-            height: 24px;
-            position: absolute;
-            right: 0;
           }
         }
 
@@ -126,6 +90,10 @@ class TormiiApp extends PolymerElement {
             padding: 0 17%;
           }
         }
+
+        tormii-menu {
+          display: inherit;
+        }
       </style>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
@@ -138,11 +106,7 @@ class TormiiApp extends PolymerElement {
         <!-- Drawer content -->
         <template is="dom-if" if="[[!desktopView]]">
           <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-            <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-              <a name="home" href="[[rootPath]]">Home</a>
-              <a name="events" href="[[rootPath]]events">Events</a>
-              <a name="contact-us" href="[[rootPath]]contact-us">Contact Us</a>
-            </iron-selector>
+            <tormii-menu page="[[page]]" root-path="[[rootPath]]"></tormii-menu>
           </app-drawer>
         </template>
 
@@ -157,11 +121,7 @@ class TormiiApp extends PolymerElement {
               </template>
               <template is="dom-if" if="[[desktopView]]">
                 <a class="header__link" name="home" href="[[rootPath]]">Times of Refreshing Ministries Int’l., Inc.</a>
-                <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-                  <a name="home" href="[[rootPath]]">Home</a>
-                  <a name="events" href="[[rootPath]]events">Events</a>
-                  <a name="contact-us" href="[[rootPath]]contact-us">Contact Us</a>
-                </iron-selector>
+                <tormii-menu page="[[page]]" root-path="[[rootPath]]"></tormii-menu>
               </template>
             </app-toolbar>
           </app-header>
@@ -185,7 +145,7 @@ class TormiiApp extends PolymerElement {
       page: {
         type: String,
         reflectToAttribute: true,
-        observer: '_pageChanged'
+        observer: '_pageChanged',
       },
       routeData: Object,
       subroute: Object
