@@ -9,6 +9,7 @@
  */
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 import { setPassiveTouchGestures, setRootPath } from '@polymer/polymer/lib/utils/settings.js';
 import '@polymer/app-layout/app-drawer/app-drawer.js';
 import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
@@ -187,28 +188,30 @@ class TormiiApp extends PolymerElement {
   }
 
   _pageChanged(page) {
-    const header_links = this.shadowRoot.querySelectorAll('.header__link');
-
-    if (header_links.length) header_links[0].className = 'header__link';
-    // Import the page component on demand.
-    //
-    // Note: `polymer build` doesn't like string concatenation in the import
-    // statement, so break it up.
-    switch (page) {
-      case 'home':
-        import('./home.js');
-        if (header_links.length) header_links[0].className += ' active';
-        break;
-      case 'events':
-        import('./events.js');
-        break;
-      case 'contact-us':
-        import('./contact-us.js');
-        break;
-      case '404':
-        import('./404.js');
-        break;
-    }
+    afterNextRender(this, () => {
+      const header_links = this.shadowRoot.querySelectorAll('.header__link');
+  
+      if (header_links.length) header_links[0].className = 'header__link';
+      // Import the page component on demand.
+      //
+      // Note: `polymer build` doesn't like string concatenation in the import
+      // statement, so break it up.
+      switch (page) {
+        case 'home':
+          import('./home.js');
+          if (header_links.length) header_links[0].className += ' active';
+          break;
+        case 'events':
+          import('./events.js');
+          break;
+        case 'contact-us':
+          import('./contact-us.js');
+          break;
+        case '404':
+          import('./404.js');
+          break;
+      }
+    });
   }
 }
 
