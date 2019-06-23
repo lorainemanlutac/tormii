@@ -223,14 +223,9 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           <h1 class="content__header content__header--align-left">What We Do</h1>
           <span class="content__text content__text--white">What's in store for our pastors and missionaries?</span>
           <ul class="content__list content__list--unordered">
-            <li class="content__item">Shopping Spree</li>
-            <li class="content__item">Grocery Spree</li>
-            <li class="content__item">Hotel Stay</li>
-            <li class="content__item">Vacation Getaway</li>
-            <li class="content__item">Dine Out</li>
-            <li class="content__item">Health & Wellness</li>
-            <li class="content__item">Theme Park Adventures</li>
-            <li class="content__item">Water Activities</li>
+            <template is="dom-repeat" items="[[activities]]" as="activity">
+              <li class="content__item">[[activity]]</li>
+            </template>
           </ul>
         </section>
         <section class="content content__about-us">
@@ -248,33 +243,20 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
         </h1>
       </section>
       <section class="content content__testimonials">
-        <h1 class="content__header content__header--small">What They Say About Us</h1>
-        <div class="content__testimonial">
-          <iron-image class="content__icon content__icon--medium"
-            sizing="cover"
-            alt="Ben Land testimony."
-            src="./images/attestants/Ben-Land.jpg">
-          </iron-image>
-          <div class="testimonial__content">
-            <h1 class="testimonial__text">Ben Land</h1>
-            <p class="content__text">
-              Just finished my first every mission trip in the Philippines with some time at the beach with Refreshing Ministries. Truly wonderful time with great people! Very refreshing.
-            </p>
+        <h1 class="content__header content__header--small">Testimonials</h1>
+        <template is="dom-repeat" items="[[testimonials]]">
+          <div class="content__testimonial">
+            <iron-image class="content__icon content__icon--medium"
+              sizing="cover"
+              alt="[[item.alt]]."
+              src="[[item.imageSrc]]">
+            </iron-image>
+            <div class="testimonial__content">
+              <h1 class="testimonial__text">[[item.attestant]]</h1>
+              <p class="content__text">[[item.testimonial]]</p>
+            </div>
           </div>
-        </div>
-        <div class="content__testimonial">
-          <iron-image class="content__icon content__icon--medium"
-            sizing="cover"
-            alt="Jayvie A. Talosig testimony."
-            src="./images/attestants/Jayvie-A-Talosig.jpg">
-          </iron-image>
-          <div class="testimonial__content">
-            <h1 class="testimonial__text">Jayvie A. Talosig</h1>
-            <p class="content__text">
-              And if anyone gives even a cup of cold water to one of these little ones who is my disciple, truly I tell you, that person will certainly not lose their reward.”
-            </p>
-          </div>
-        </div>
+        </template>
       </section>
       <footer class="footer">
         <div class="footer__section">
@@ -285,27 +267,19 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           <div class="footer__section">
             <h2 class="footer__section-title">Sitemap</h2>
             <div class="footer__links">
-              <button class="footer__link"
-                on-tap="_onButtonClick"
-                data-event="scroll"
-                data-section="banner">
-                Home
-              </button>
-              <button class="footer__link"
-                on-tap="_onButtonClick"
-                data-event="scroll"
-                data-section="events-content">
-                Events
-              </button>
+              <template is="dom-repeat" items="[[sitemap]]">
+                <button class="footer__link" on-tap="_onButtonClick" data-event="scroll" data-section$="[[item.section]]">
+                  [[item.text]]
+                </button>
+              </template>
             </div>
           </div>
           <div class="footer__section">
             <h2 class="footer__section-title">Socials</h2>
             <div class="footer__links">
-              <a class="footer__link" href="mailto:refreshingministry@yahoo.com">refreshingministry@yahoo.com</a>
-              <a class="footer__link" href="https://web.facebook.com/RefreshingMinistry" target="_blank">
-                facebook.com/RefreshingMinistry
-              </a>
+              <template is="dom-repeat" items="[[socials]]" as="social">
+                <a class="footer__link" href="[[social.link]]" target="[[social.target]]">[[social.text]]</a>
+              </template>
             </div>
           </div>
           <div class="footer__section footer__section--center footer__section--dark">
@@ -314,6 +288,60 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
         </div>
       </footer>
     `;
+  }
+
+  static get properties() {
+    return {
+      activities: {
+        type: Array,
+        value: [
+          'Shopping Spree',
+          'Grocery Spree',
+          'Hotel Stay',
+          'Vacation Getaway',
+          'Dine Out',
+          'Health & Wellness',
+          'Theme Park Adventures',
+          'Water Activities',
+        ],
+      },
+      sitemap: {
+        type: Array,
+        value: [{ section: 'banner', text: 'Home' }, { section: 'events-content', text: 'Events' }],
+      },
+      socials: {
+        type: Array,
+        value: [
+          {
+            link: 'mailto:refreshingministry@yahoo.com',
+            target: '',
+            text: 'refreshingministry@yahoo.com',
+          },
+          {
+            link: 'https://web.facebook.com/RefreshingMinistry',
+            target: '_blank',
+            text: 'facebook.com/RefreshingMinistry',
+          },
+        ],
+      },
+      testimonials: {
+        type: Array,
+        value: [
+          {
+            alt: 'Ben Land testimonial',
+            attestant: 'Ben Land',
+            imageSrc: './images/attestants/Ben-Land.jpg',
+            testimonial: 'Just finished my first every mission trip in the Philippines with some time at the beach with Refreshing Ministries. Truly wonderful time with great people! Very refreshing.',
+          },
+          {
+            alt: 'Jayvie A. Talosig testimonial',
+            attestant: 'Jayvie A. Talosig',
+            imageSrc: './images/attestants/Jayvie-A-Talosig.jpg',
+            testimonial: 'And if anyone gives even a cup of cold water to one of these little ones who is my disciple, truly I tell you, that person will certainly not lose their reward.”',
+          }
+        ],
+      },
+    };
   }
 
   ready() {
