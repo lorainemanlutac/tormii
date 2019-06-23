@@ -82,7 +82,7 @@ class TormiiApp extends PolymerElement {
 
         @media (min-width: 720px) {
           app-header {
-            padding: 0 10%;
+            padding: 0 8%;
           }
         }
 

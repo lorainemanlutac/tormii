@@ -21,10 +21,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       a,
       .content__header.content__header--white,
       .content__list,
-      .content__text--white,
-      footer,
-      .footer__link,
-      span.footer__note {
+      .content__text--white {
         color: #ffffff;
       }
 
@@ -64,8 +61,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         background-color: #1f1f1f;
       }
 
-      .content__header,
-      .footer__section-title--all-caps {
+      .content__header {
         text-transform: uppercase;
       }
 
@@ -109,8 +105,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         font-size: 16px;
       }
 
-      .content__header-text--small,
-      .footer__section-title {
+      .content__header-text--small {
         font-weight: 600;
       }
 
@@ -162,8 +157,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         width: 100%;
       }
 
-      .content__overlay,
-      .footer__section--dark {
+      .content__overlay {
         background-color: #000000;
       }
 
@@ -172,7 +166,6 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
 
       .content__testimonial,
-      .footer__section--center,
       h1,
       p {
         text-align: center;
@@ -186,58 +179,8 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         padding: 75px 35px;
       }
 
-      footer {
-        background-color: #2d2d2d;
-        padding: 50px 50px 70px;
-        position: relative;
-      }
-
-      .footer__link {
-        display: block;
-        line-height: 1.64;
-      }
-
-      .footer__link,
       h6 {
         font-size: 14px;
-      }
-
-      .footer__note {
-        font-size: 10px;
-        height: 14px;
-        vertical-align: middle;
-      }
-
-      .footer__section {
-        margin-bottom: 30px;
-      }
-
-      .footer__section:last-child {
-        bottom: 0;
-        left: 0;
-        margin-bottom: 0;
-        padding: 13px 0;
-        position: absolute;
-        right: 0;
-      }
-
-      .footer__section-title {
-        height: 24px;
-        line-height: normal;
-      }
-
-      .footer__section-title,
-      .footer__text {
-        color: rgba(255, 255, 255, 0.75);
-      }
-
-      .footer__section-title,
-      .footer__title {
-        margin-bottom: 5px;
-      }
-
-      .footer__text {
-        line-height: 1.57;
       }
 
       h1 {
@@ -255,15 +198,6 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       h6,
       p {
         margin: 0;
-      }
-
-      h2 {
-        font-size: 18px;
-        font-weight: normal;
-        height: 48px;
-        line-height: normal;
-        margin: 0 0 15px;
-        width: 165px;
       }
 
       h6 {
@@ -322,9 +256,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
           width: auto;
         }
 
-        .content__testimonials-container > div,
-        .footer__section,
-        .footer__sections {
+        .content__testimonials-container > div {
           display: inline-block;
         }
 
@@ -336,23 +268,6 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
           display: block;
           margin: 0 auto;
           width: 240px;
-        }
-
-        footer {
-          padding: 40px 2%;
-        }
-
-        .footer__section {
-          padding: 0 30px;
-          vertical-align: top;
-        }
-
-        .footer__section h2 {
-          width: auto;
-        }
-
-        .footer__section h2.footer__title {
-          width: 210px;
         }
 
         h1 {
@@ -376,19 +291,11 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         .content__testimonial {
           margin: 55px 25% 0;
         }
-
-        footer {
-          padding: 65px 26% 80px;
-        }
       }
 
       @media (width: 1080px) {
         .content__testimonial {
           margin: 55px 18% 0;
-        }
-
-        footer {
-          padding: 65px 18% 80px;
         }
       }
     </style>

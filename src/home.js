@@ -11,6 +11,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { GestureEventListeners } from '@polymer/polymer/lib/mixins/gesture-event-listeners.js';
 import Glide from '@glidejs/glide';
+import './elements/footer.js';
 import './shared-styles.js';
 
 class TormiiHome extends GestureEventListeners(PolymerElement) {
@@ -258,35 +259,7 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           </div>
         </template>
       </section>
-      <footer class="footer">
-        <div class="footer__section">
-          <h2 class="footer__title">Times of Refreshing Ministries Int’l., Inc.</h2>
-          <h6 class="footer__text">Let us all shout our praise to God!</h6>
-        </div>
-        <div class="footer__sections">
-          <div class="footer__section">
-            <h2 class="footer__section-title">Sitemap</h2>
-            <div class="footer__links">
-              <template is="dom-repeat" items="[[sitemap]]">
-                <button class="footer__link" on-tap="_onButtonClick" data-event="scroll" data-section$="[[item.section]]">
-                  [[item.text]]
-                </button>
-              </template>
-            </div>
-          </div>
-          <div class="footer__section">
-            <h2 class="footer__section-title">Socials</h2>
-            <div class="footer__links">
-              <template is="dom-repeat" items="[[socials]]" as="social">
-                <a class="footer__link" href="[[social.link]]" target="[[social.target]]">[[social.text]]</a>
-              </template>
-            </div>
-          </div>
-          <div class="footer__section footer__section--center footer__section--dark">
-            <span class="footer__note footer__section-title footer__section-title--all-caps">tormii.org</span>
-          </div>
-        </div>
-      </footer>
+      <tormii-footer on-sitemap-click="_onSitemapClick"></tormii-footer>
     `;
   }
 
@@ -303,25 +276,6 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           'Health & Wellness',
           'Theme Park Adventures',
           'Water Activities',
-        ],
-      },
-      sitemap: {
-        type: Array,
-        value: [{ section: 'banner', text: 'Home' }, { section: 'events-content', text: 'Events' }],
-      },
-      socials: {
-        type: Array,
-        value: [
-          {
-            link: 'mailto:refreshingministry@yahoo.com',
-            target: '',
-            text: 'refreshingministry@yahoo.com',
-          },
-          {
-            link: 'https://web.facebook.com/RefreshingMinistry',
-            target: '_blank',
-            text: 'facebook.com/RefreshingMinistry',
-          },
         ],
       },
       testimonials: {
@@ -349,17 +303,8 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
     new Glide(this.shadowRoot.querySelectorAll('.glide')[0]).mount();
   }
 
-  _onButtonClick({ target }) {
-    const { dataset } = target;
-
-    switch (dataset.event) {
-      case 'scroll':
-        this.shadowRoot.querySelectorAll(`.${dataset.section}`)[0].scrollIntoView({ behavior: 'smooth' });
-        break;
-    
-      default:
-        break;
-    }
+  _onSitemapClick({ detail }) {
+    this.shadowRoot.querySelectorAll(`.${detail.payload.section}`)[0].scrollIntoView({ behavior: 'smooth' });
   }
 }
 
