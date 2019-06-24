@@ -25,6 +25,10 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         color: #ffffff;
       }
 
+      .banner__img {
+        min-height: 225px;
+      }
+
       button {
         background-color: transparent;
         border: 0;
@@ -179,6 +183,42 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         padding: 75px 35px;
       }
 
+      .event__date {
+        height: 14px;
+        opacity: 0.75;
+        font-size: 10px;
+        vertical-align: top;
+      }
+
+      .event__description {
+        background-color: #000000;
+        border-radius: 0 0 5px 5px;
+        bottom: 7px;
+        color: #ffffff;
+        line-height: normal;
+        opacity: 0.75;
+        padding: 15px;
+        position: absolute;
+      }
+
+      .events__img {
+        height: 208px;
+        border-radius: 8px;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.12), 0 0 15px 0 rgba(0, 0, 0, 0.03);
+      }
+
+      .event__title--all-caps {
+        text-transform: uppercase;
+      }
+
+      .glide__slide {
+        position: relative;
+      }
+
+      .glide__slides {
+        margin-bottom: 0;
+      }
+
       h6 {
         font-size: 14px;
       }
@@ -202,7 +242,6 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
 
       h6 {
         font-weight: normal;
-        height: 19px;
       }
 
       iron-image {
@@ -210,6 +249,10 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
 
       @media (min-width: 641px) {
+        .banner__img {
+          min-height: 615px;
+        }
+
         .content__card {
           height: 350px;
         }
@@ -268,6 +311,10 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
           display: block;
           margin: 0 auto;
           width: 240px;
+        }
+
+        .events__img {
+          height: 348px;
         }
 
         h1 {

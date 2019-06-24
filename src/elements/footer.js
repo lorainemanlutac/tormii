@@ -43,7 +43,8 @@ class Footer extends LitElement {
 
       footer,
       .footer__link,
-      span.footer__note {
+      span.footer__note,
+      .sitemap__link {
         color: #ffffff;
       }
 
@@ -130,6 +131,12 @@ class Footer extends LitElement {
         margin: 0;
       }
 
+      .sitemap__link {
+        display: block;
+        font-size: 14px;
+        line-height: 1.64;
+      }
+
       @media (min-width: 641px) {
         .footer__section,
         .footer__sections {
@@ -172,10 +179,12 @@ class Footer extends LitElement {
       <div class="footer__section">
         <h2 class="footer__section-title">Sitemap</h2>
         <div class="footer__links">
-          ${this.sitemap.map(i => html`
+          ${this.sitemap.map(i => this.page === 'home' ? html`
           <button class="footer__link" @click="${this.onButtonClick}" data-section="${i.section}">
             ${i.text}
           </button>
+          ` : html`
+          <a class="sitemap__link" name="${i.name}" href="${this.rootPath}${i.link}">${i.text}</a>
           `)}
         </div>
       </div>
@@ -183,7 +192,7 @@ class Footer extends LitElement {
         <h2 class="footer__section-title">Socials</h2>
         <div class="footer__links">
           ${this.socials.map(i => html`
-          <a class="footer__link" href="${i.link}" target="${i.target}">${i.text}</a>
+          <a class="footer__link" href="${this.rootPath}${i.link}" target="${i.target}">${i.text}</a>
           `)}
         </div>
       </div>
@@ -197,6 +206,8 @@ class Footer extends LitElement {
 
   static get properties() {
     return {
+      page: { type: String },
+      rootPath: { type: String },
       sitemap: { type: Array },
       socials: { type: Array },
     };
@@ -204,7 +215,10 @@ class Footer extends LitElement {
 
   constructor() {
     super();
-    this.sitemap = [{ section: 'banner', text: 'Home' }, { section: 'events-content', text: 'Events' }];
+    this.sitemap = [
+      { link: '', name: 'home', section: 'banner', text: 'Home' },
+      { link: 'events', name: 'events', section: 'events-content', text: 'Events' },
+    ];
     this.socials = [
       {
         link: 'mailto:refreshingministry@yahoo.com',

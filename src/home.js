@@ -23,40 +23,16 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           display: block;
         }
 
-        .banner__img {
-          min-height: 225px;
-        }
-
         .content__mission {
           background-size: cover;
         }
 
-        .event__date {
-          height: 14px;
-          opacity: 0.75;
-          font-size: 10px;
-          vertical-align: top;
-        }
-
         .event__description {
-          background-color: #000000;
-          border-radius: 0 0 5px 5px;
-          bottom: 7px;
-          color: #ffffff;
-          height: 67.5px;
-          line-height: normal;
-          opacity: 0.75;
-          padding: 15px;
-          position: absolute;
-        }
-
-        .event__description,
-        .glide__arrows {
           width: 100%;
         }
 
-        .event__title--all-caps {
-          text-transform: uppercase;
+        .glide__arrows {
+          width: 100%;
         }
 
         .glide__arrow--left {
@@ -89,19 +65,7 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           text-align: center;
         }
 
-        .glide__slide {
-          position: relative;
-        }
-
-        .glide__slides {
-          margin-bottom: 0;
-        }
-
         @media (min-width: 641px) {
-          .banner__img {
-            min-height: 615px;
-          }
-
           .content__block {
             display: block;
           }
@@ -153,7 +117,7 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
       </style>
 
       <section class="banner">
-        <iron-image class="banner__img" sizing="cover" alt="TORMII banner." src="./images/banner.jpg">
+        <iron-image class="banner__img" sizing="cover" alt="TORMII banner." src="./images/banners/home.jpg">
         </iron-image>
       </section>
       <section class="content events-content">
@@ -190,7 +154,7 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
                   src="./images/events/SUMMER OUTING 2019.jpg">
                 </iron-image>
                 <div class="event__description">
-                  <span class="event__date">May 6, 2019</span>
+                  <span class="event__date">April 25, 2019</span>
                   <h6 class="event__title event__title--all-caps">Summer Outing 2019</h6>
                 </div>
               </li>
@@ -259,7 +223,7 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           </div>
         </template>
       </section>
-      <tormii-footer on-sitemap-click="_onSitemapClick"></tormii-footer>
+      <tormii-footer on-sitemap-click="_onSitemapClick" page="home"></tormii-footer>
     `;
   }
 

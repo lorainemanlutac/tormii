@@ -129,7 +129,7 @@ class TormiiApp extends PolymerElement {
 
           <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
             <tormii-home name="home"></tormii-home>
-            <fb-events name="events"></fb-events>
+            <fb-events name="events" root-path="[[rootPath]]"></fb-events>
             <contact-us name="contact-us"></contact-us>
             <tormii-view404 name="404"></tormii-view404>
           </iron-pages>
