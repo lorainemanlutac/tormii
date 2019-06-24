@@ -76,18 +76,26 @@ class Menu extends LitElement {
       </style>
 
       <iron-selector selected="${this.page}" attr-for-selected="name" class="drawer-list" role="navigation">
-        <a name="home" href="${this.rootPath}">Home</a>
-        <a name="events" href="${this.rootPath}events">Events</a>
-        <a name="contact-us" href="${this.rootPath}contact-us">Contact Us</a>
+        ${this.menu.map(i => html`<a name="${i.name}" href="${this.rootPath}${i.link}">${i.text}</a>`)}
       </iron-selector>
     `;
   }
 
   static get properties() {
     return {
+      menu: { type: Array },
       page: { type: String },
       rootPath: { type: String },
     };
+  }
+  
+  constructor() {
+    super();
+    this.menu = [
+      { link: '', name: 'home', text: 'Home' },
+      { link: 'events', name: 'events', text: 'Events' },
+      { link: 'contact-us', name: 'contact-us', text: 'Contact Us' },
+    ];
   }
 }
 // Register the new element with the browser.
