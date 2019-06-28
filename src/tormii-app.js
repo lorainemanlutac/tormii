@@ -117,7 +117,7 @@ class TormiiApp extends PolymerElement {
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
               <template is="dom-if" if="[[!desktopView]]">
-                <paper-icon-button icon="tormii-icons:menu" drawer-toggle=""></paper-icon-button>
+                <paper-icon-button icon="tormii-icons:menu" drawer-toggle="" aria-label="$1"></paper-icon-button>
                 <div main-title="">TORMII</div>
               </template>
               <template is="dom-if" if="[[desktopView]]">

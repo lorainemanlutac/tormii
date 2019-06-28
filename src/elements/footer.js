@@ -192,7 +192,7 @@ class Footer extends LitElement {
         <h2 class="footer__section-title">Socials</h2>
         <div class="footer__links">
           ${this.socials.map(i => html`
-          <a class="footer__link" href="${this.rootPath}${i.link}" target="${i.target}">${i.text}</a>
+          <a class="footer__link" href="${i.link}" target="${i.target}" rel="noreferrer">${i.text}</a>
           `)}
         </div>
       </div>

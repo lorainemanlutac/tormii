@@ -177,9 +177,9 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
             </button>
           </div>
           <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
+            <button class="glide__bullet" data-glide-dir="=0" aria-label="$1"></button>
+            <button class="glide__bullet" data-glide-dir="=1" aria-label="$1"></button>
+            <button class="glide__bullet" data-glide-dir="=2" aria-label="$1"></button>
           </div>
         </div>
       </section>
