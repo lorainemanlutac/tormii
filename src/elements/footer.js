@@ -127,7 +127,6 @@ class Footer extends LitElement {
       h6 {
         font-weight: normal;
         font-size: 14px;
-        height: 19px;
         margin: 0;
       }
 
@@ -173,7 +172,7 @@ class Footer extends LitElement {
     <footer class="footer">
       <div class="footer__section">
       <h2 class="footer__title">Times of Refreshing Ministries Int’l., Inc.</h2>
-      <h6 class="footer__text">Let us all shout our praise to God!</h6>
+      <h6 class="footer__text">Your love has given me great joy and encouragement, because you, brother, have refreshed the hearts of the lord's people</h6>
       </div>
       <div class="footer__sections">
       <div class="footer__section">
