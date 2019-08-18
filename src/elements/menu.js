@@ -53,14 +53,13 @@ class Menu extends LitElement {
         @media (max-width: 640px) {
           .drawer-list a {
             display: block;
-            padding: 0 16px;
             text-decoration: none;
-            color: var(--app-secondary-color);
+            color: #0096bb;
             line-height: 40px;
+            padding: 0 35px 10px;
           }
 
           .drawer-list a.iron-selected {
-            color: black;
             font-weight: bold;
           }
         }

@@ -74,6 +74,12 @@ class TormiiApp extends PolymerElement {
           font-weight: 600;
         }
 
+        @media (max-width: 640px) {
+          h4 {
+            padding: 70px 35px 50px;
+          }
+        }
+
         @media (min-width: 641px) {
           app-header {
             padding: 0 5%;
@@ -107,6 +113,9 @@ class TormiiApp extends PolymerElement {
         <!-- Drawer content -->
         <template is="dom-if" if="[[!desktopView]]">
           <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+            <h4>
+              <a class="header__link" name="home" href="[[rootPath]]">Times of Refreshing Ministries Int’l., Inc.</a>
+            </h4>
             <tormii-menu page="[[page]]" root-path="[[rootPath]]"></tormii-menu>
           </app-drawer>
         </template>

@@ -20,6 +20,16 @@ class Newsletter extends PolymerElement {
           display: block;
         }
 
+        .content__date {
+          color: #909090;
+          font-size: 14px;
+        }
+
+        h4 {
+          color: #0096bb;
+          margin-top: 0;
+        }
+
         @media (min-width: 641px) {
           .content {
             padding: 140px 25%;
@@ -32,6 +42,8 @@ class Newsletter extends PolymerElement {
         </iron-image>
       </section>
       <section class="content">
+        <span class="content__date">July 6, 2019</span>
+        <h4>TORMII 2nd Year Anniversary</h4>
         <p>
           Happy 2nd Anniversary TORMII!
           <br><br>
