@@ -94,6 +94,7 @@ class Menu extends LitElement {
     this.menu = [
       { link: '', name: 'home', text: 'Home' },
       { link: 'events', name: 'events', text: 'Events' },
+      { link: 'newsletter', name: 'newsletter', text: 'Newsletter' },
       { link: 'contact-us', name: 'contact-us', text: 'Contact Us' },
     ];
   }

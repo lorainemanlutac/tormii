@@ -220,9 +220,9 @@ class Footer extends LitElement {
     ];
     this.socials = [
       {
-        link: 'mailto:refreshingministry@yahoo.com',
+        link: 'mailto:admin@tormii.org',
         target: '',
-        text: 'refreshingministry@yahoo.com',
+        text: 'admin@tormii.org',
       },
       {
         link: 'https://web.facebook.com/RefreshingMinistry',
