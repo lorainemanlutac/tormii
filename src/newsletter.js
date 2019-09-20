@@ -41,7 +41,7 @@ class Newsletter extends PolymerElement {
         <iron-image class="banner__img" sizing="cover" alt="2nd anniv banner." src="./images/banners/2ndanniv.jpg">
         </iron-image>
       </section>
-      <section class="content">
+      <section class="content newsletter-content">
         <span class="content__date">July 6, 2019</span>
         <h4>TORMII 2nd Year Anniversary</h4>
         <p>
