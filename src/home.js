@@ -31,40 +31,6 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           width: 100%;
         }
 
-        .glide__arrows {
-          width: 100%;
-        }
-
-        .glide__arrow--left {
-          float: left;
-          margin-left: -10px;
-        }
-
-        .glide__arrow--right {
-          float: right;
-          margin-right: -10px;
-        }
-
-        .glide__arrows {
-          bottom: 76.5px;
-          position: absolute;
-        }
-
-        .glide__bullet {
-          border-radius: 50%;
-          height: 10px;
-          width: 10px;
-          background-color: #d8d8d8;
-        }
-
-        .glide__bullet--active {
-          background-color: #00bae9;
-        }
-
-        .glide__bullets {
-          text-align: center;
-        }
-
         @media (min-width: 641px) {
           .content__block {
             display: block;
@@ -108,16 +74,11 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           .events-content {
             padding: 140px 25%;
           }
-
-          .glide__bullet {
-            height: 16px;
-            width: 16px;
-          }
         }
       </style>
 
       <section class="banner">
-        <iron-image class="banner__img" sizing="cover" alt="TORMII banner." src="./images/banners/home.jpg">
+      <iron-image class="banner__img" sizing="cover" alt="TORMII banner." src="./images/banners/home.jpg">
         </iron-image>
       </section>
       <section class="content events-content">

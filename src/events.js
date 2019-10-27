@@ -42,7 +42,7 @@ class FBEvents extends PolymerElement {
       </style>
 
       <section class="banner">
-        <iron-image class="banner__img" sizing="cover" alt="TORMII banner." src="./images/banners/events.jpg">
+      <iron-image class="banner__img" sizing="cover" alt="TORMII banner." src="./images/banners/events.jpg">
         </iron-image>
       </section>
       <section class="content events-content">
@@ -55,12 +55,14 @@ class FBEvents extends PolymerElement {
             <ul class="glide__slides events__list events__list--unordered">
               <template is="dom-repeat" items="[[events]]" as="event">
                 <li class="glide__slide events__event">
-                  <iron-image class="events__img" sizing="cover" alt="[[event.alt]]." src="[[event.imageSrc]]">
-                  </iron-image>
-                  <div class="event__description">
-                    <span class="event__date">[[event.date]]</span>
-                    <h6 class="event__title">[[event.title]]</h6>
-                  </div>
+                  <a href="[[event.event]]">
+                    <iron-image class="events__img" sizing="cover" alt="[[event.alt]]." src="[[event.imageSrc]]">
+                    </iron-image>
+                    <div class="event__description">
+                      <span class="event__date">[[event.date]]</span>
+                      <h6 class="event__title">[[event.title]]</h6>
+                    </div>
+                  </a>
                 </li>
               </template>
             </ul>
@@ -79,6 +81,7 @@ class FBEvents extends PolymerElement {
           {
             alt: '2nd year anniversary',
             date: 'July 6, 2019',
+            event: '/newsletter',
             imageSrc: './images/events/2nd-yr-anniv.jpg',
             title: 'Times of Refreshing Ministries Int\'l. Inc.,',
           },
