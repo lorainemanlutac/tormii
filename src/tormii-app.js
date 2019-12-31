@@ -139,6 +139,7 @@ class TormiiApp extends PolymerElement {
           <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
             <tormii-home name="home"></tormii-home>
             <fb-events name="events" root-path="[[rootPath]]"></fb-events>
+            <christmas-party-2019 name="christmas-party-2019" root-path="[[rootPath]]"></christmas-party-2019>
             <news-letter name="newsletter" root-path="[[rootPath]]"></news-letter>
             <contact-us name="contact-us"></contact-us>
             <tormii-view404 name="404"></tormii-view404>
@@ -186,7 +187,7 @@ class TormiiApp extends PolymerElement {
      // Show 'tormii-home' in that case. And if the page doesn't exist, show '404'.
     if (!page) {
       this.page = 'home';
-    } else if (['home', 'events', 'newsletter', 'contact-us'].indexOf(page) !== -1) {
+    } else if (['home', 'events', 'christmas-party-2019', 'newsletter', 'contact-us'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = '404';
@@ -213,6 +214,9 @@ class TormiiApp extends PolymerElement {
           break;
         case 'events':
           import('./events.js');
+          break;
+        case 'christmas-party-2019':
+          import('./christmas-party-2019.js');
           break;
         case 'newsletter':
           import('./newsletter.js');

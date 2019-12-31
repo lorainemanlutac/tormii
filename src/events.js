@@ -79,6 +79,13 @@ class FBEvents extends PolymerElement {
         type: Array ,
         value: [
           {
+            alt: '3rd Christmas Party',
+            date: 'December 1-2, 2019',
+            event: '/christmas-party-2019',
+            imageSrc: './images/events/christmas-party-2019.jpg',
+            title: 'Christmas Party 2019',
+          },
+          {
             alt: '2nd year anniversary',
             date: 'July 6, 2019',
             event: '/newsletter',

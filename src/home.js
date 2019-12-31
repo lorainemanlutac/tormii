@@ -90,6 +90,19 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
           <div class="glide__track events__container" data-glide-el="track">
             <ul class="glide__slides events__list events__list--unordered">
               <li class="glide__slide events__event">
+                <a href="/christmas-party-2019">
+                  <iron-image class="content__card"
+                    sizing="cover"
+                    alt="CHRISTMAS PARTY 2019."
+                    src="./images/events/christmas-party-2019.jpg">
+                  </iron-image>
+                  <div class="event__description">
+                    <span class="event__date">December 1-2, 2019</span>
+                    <h6 class="event__title">Christmas Party 2019</h6>
+                  </div>
+                </a>
+              </li>
+              <li class="glide__slide events__event">
                 <iron-image class="content__card"
                   sizing="cover"
                   alt="2nd year anniversary."
@@ -141,6 +154,7 @@ class TormiiHome extends GestureEventListeners(PolymerElement) {
             <button class="glide__bullet" data-glide-dir="=0" aria-label="$1"></button>
             <button class="glide__bullet" data-glide-dir="=1" aria-label="$1"></button>
             <button class="glide__bullet" data-glide-dir="=2" aria-label="$1"></button>
+            <button class="glide__bullet" data-glide-dir="=3" aria-label="$1"></button>
           </div>
         </div>
       </section>
